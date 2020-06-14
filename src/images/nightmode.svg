@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Extra-large:-Desktops---12-col-Copy" transform="translate(-1233.000000, -53.000000)">
+            <g id="Group-2" transform="translate(1233.000000, 53.000000)">
+                <circle id="Oval" fill="#D1E1E9" cx="21" cy="21" r="21"></circle>
+                <g id="moon" transform="translate(12.000000, 11.000000)" stroke="#215973" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <path d="M18,9.79 C17.5623508,14.5258084 13.5155205,18.1036351 8.76177646,17.9575683 C4.00803241,17.8115015 0.188498486,13.9919676 0.0424317105,9.23822354 C-0.103635065,4.48447948 3.4741916,0.437649222 8.21,-8.8817842e-16 C6.15036193,2.78645171 6.43925659,6.66045319 8.8894017,9.1105983 C11.3395468,11.5607434 15.2135483,11.8496381 18,9.79 L18,9.79 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

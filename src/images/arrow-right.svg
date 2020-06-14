@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>arrow-right-circle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Extra-large:-Desktops---12-col-Copy" transform="translate(-1234.000000, -1491.000000)" stroke="#B84E93" stroke-width="2">
+            <g id="arrow-right-circle" transform="translate(1235.000000, 1492.000000)">
+                <circle id="Oval" cx="20" cy="20" r="20"></circle>
+                <polyline id="Path" points="20 28 28 20 20 12"></polyline>
+                <line x1="12" y1="20" x2="28" y2="20" id="Path"></line>
+            </g>
+        </g>
+    </g>
+</svg>
