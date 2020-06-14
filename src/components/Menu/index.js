@@ -1,8 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
+// Styles
+import { Nav } from "./Menu.styles"
+
 const Menu = ({ items }) => (
-  <ul>
+  <Nav>
     {items.map(item => (
       <li key={item.id}>
         <Link to={item.link} activeClassName="active">
@@ -10,7 +13,7 @@ const Menu = ({ items }) => (
         </Link>
       </li>
     ))}
-  </ul>
+  </Nav>
 )
 
 export default Menu
