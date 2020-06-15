@@ -2,8 +2,17 @@ import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 // Icons
-import DateIcon from "images/calender.svg"
+import DateIcon from "images/calendar.svg"
 import TimeIcon from "images/watch.svg"
+// Styles
+import {
+  CardWrapper,
+  ImgWrapper,
+  TextWrapper,
+  StatWrapper,
+  DateWrapper,
+  ReadingTimeWrapper,
+} from "./BlogPostCard.styles"
 
 const BlogPostCard = ({ slug, title, date, readingTime, excerpt, image }) => (
   <CardWrapper>
