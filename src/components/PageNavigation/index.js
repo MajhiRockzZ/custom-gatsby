@@ -4,29 +4,34 @@ import { Link } from "gatsby"
 import LeftIcon from "images/arrow-left.svg"
 import RightIcon from "images/arrow-right.svg"
 // Styles
+import {
+  PageNavigationWrapper,
+  ImgWrapper,
+  Current,
+} from "./PageNavigation.styles"
 
 const PageNavigation = ({ currentPage, numPages }) => (
-  <div>
-    <div>
+  <PageNavigationWrapper>
+    <ImgWrapper>
       {currentPage > 1 && (
         <Link to={`/${currentPage === 2 ? "" : currentPage - 1}`}>
           <input type="image" alt="left-nav" src={LeftIcon} />
         </Link>
       )}
-    </div>
-    <div>
+    </ImgWrapper>
+    <Current>
       <p>
         {currentPage} / {numPages}
       </p>
-    </div>
-    <div>
+    </Current>
+    <ImgWrapper>
       {currentPage !== numPages && (
         <Link to={`/${currentPage + 1}`}>
           <input type="image" alt="right-nav" src={RightIcon} />
         </Link>
       )}
-    </div>
-  </div>
+    </ImgWrapper>
+  </PageNavigationWrapper>
 )
 
 export default PageNavigation

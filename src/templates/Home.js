@@ -6,8 +6,9 @@ import Layout from "components/Layout"
 import SEO from "components/SEO"
 import Hero from "components/Hero"
 import BlogPostCard from "components/BlogPostCard"
+import PageNavigation from "components/PageNavigation"
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
   console.log(data)
   return (
@@ -15,6 +16,10 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Hero />
       <main>
+        <PageNavigation
+          currentPage={pageContext.currentPage}
+          numPages={pageContext.numPages}
+        />
         {posts.map(({ node }, i) => {
           const title = node.frontmatter.title || "No title"
           return (
