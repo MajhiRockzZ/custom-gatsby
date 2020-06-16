@@ -16,11 +16,11 @@ const IndexPage = ({ data }) => {
       <Hero />
       <main>
         {posts.map(({ node }, i) => {
-          const title = node.frontmatter.title
+          const title = node.frontmatter.title || "No title"
           return (
             <BlogPostCard
-              key={i}
-              slug="/"
+              key={node.fields.slug}
+              slug={node.fields.slug}
               title={title}
               date={node.frontmatter.date}
               readingTime={node.fields.readingTime.text}
@@ -37,14 +37,17 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const indexQuery = graphql`
-  query blogListQuery {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "post" } } }
+      limit: $limit
+      skip: $skip
+      filter: { frontmatter: { type: { eq: "post" }, published: { eq: true } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
         node {
           fields {
+            slug
             readingTime {
               text
             }
