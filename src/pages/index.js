@@ -8,13 +8,27 @@ import Hero from "components/Hero"
 import BlogPostCard from "components/BlogPostCard"
 
 const IndexPage = ({ data }) => {
+  const posts = data.allMarkdownRemark.edges
   console.log(data)
   return (
     <Layout>
       <SEO title="Home" />
       <Hero />
       <main>
-        <BlogPostCard />
+        {posts.map(({ node }, i) => {
+          const title = node.frontmatter.title
+          return (
+            <BlogPostCard
+              key={i}
+              slug="/"
+              title={title}
+              date={node.frontmatter.date}
+              readingTime={node.fields.readingTime.text}
+              excerpt={node.excerpt}
+              image={node.frontmatter.image.childImageSharp.fluid}
+            />
+          )
+        })}
       </main>
     </Layout>
   )
