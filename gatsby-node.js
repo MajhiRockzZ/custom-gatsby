@@ -20,7 +20,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPages } = actions
+  const { createPage } = actions
   const content = await graphql(`
     {
       posts: allMarkdownRemark(
@@ -50,8 +50,39 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  // Do nothing more if errors
+  if (content.error) return
 
-  console.log(content)
+  const allPosts = content.data.posts.edges
+  const allPages = content.data.pages.edges
+
+  // Create the individual posts
+  allPosts.forEach(({ node }) => {
+    if (node.frontmatter.published) {
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve(`./src/templates/Post.js`),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables
+          slug: node.fields.slug,
+        },
+      })
+    }
+  })
+
+  // Create the individual pages
+  allPages.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/Page.js`),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables
+        slug: node.fields.slug,
+      },
+    })
+  })
 }
 
 // For absolute imports
